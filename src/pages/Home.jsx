@@ -92,7 +92,7 @@ const Home = () => {
                 <div className='w-full flex items-center mt-[33px] 
                 justify-center mx-auto rounded-[20px] gap-5 transition-all ease-in'>
                      <div className={`${!checkk? "text-white font-bold" : "text-white"} transition-all ease-in text-[#FEFEFE] text-[18px] 
-                    leading-[30px] lg:visible hidden`}>
+                    leading-[30px] lg:flex hidden`}>
                         Billed Monthly
                     </div>
                     <div className={`${!checkk? "text-white font-bold" : "text-white"} transition-all ease-in text-[#FEFEFE] text-[18px] 
@@ -104,7 +104,7 @@ const Home = () => {
                     </div>
                     <div className={`${checkk? "text-white font-bold" : "text-white"} transition-all ease-in text-[#FEFEFE] text-[18px] 
                     leading-[30px]`}>
-                        <div className='lg:visible hidden'>
+                        <div className='lg:flex hidden'>
                             Billed Anually
                             <span className='text-green-500'>(Save 20%)</span>
                         </div>
