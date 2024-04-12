@@ -64,23 +64,23 @@ const Home = () => {
   return (
     <div className='relative flex flex-col items-center justify-between max-w-max mx-auto' style={{fontFamily:"Gilroy"}}>
         {/* Section1 */}
-        <section>
+        <section className='absolute lg:top-[199px] top-[100px]'>
             <div className='flex flex-col items-center justify-center flex-wrap
-            w-[668px] h-[279px] mx-auto'>
+            lg:w-[668px] w-[382px] h-[279px] mx-auto'>
                 <div className='mt-[20px]'>
                     <p className='font-bold text-[#3FA268]'>
                         PRICING
                     </p>
                 </div>
 
-                <div className='h-[62px] text-[50px] leading-[62px] font-[400] mt-10 '>
+                <div className='h-[62px] lg:text-[50px] text-[35px] lg:leading-[62px] leading-[43.33px] font-[400] mt-10 '>
                     <h2 className='font-bold text-[#FEFEFE]'>
                         Our Pricing Plans
                     </h2>
                 </div>
                 <div className='mt-[2px]'>
-                    <p className='text-[#FEFEFE] text-[18px] 
-                    leading-[30px] text-center'>
+                    <p className='text-[#FEFEFE] lg:text-[18px] text-[14px] 
+                    lg:leading-[30px] leading-[16.88px] text-center'>
                     Choose the pricing plan that best meets your needs and budget, 
                     and start accelerating your R&D today.
                     </p>
@@ -99,25 +99,24 @@ const Home = () => {
                         <div>
                             Billed Anually
                             <span className='text-green-500'>(Save 20%)</span>
-                            
                         </div>
-                      
                     </div>
 
                 </div>
             </div>
         </section>
 
-        {/* section-2 */}
-        <section className='p-16'>
-            <div className='w-[937px] h-[500px] mx-auto flex flex-row items-center 
+        {/* section-2new */}
+        <section className='lg:p-16 absolute lg:top-[510px] top-[412px]'>
+            <div className='lg:w-[937px] lg:h-[500px] mx-auto flex lg:flex-row flex-col items-center 
             justify-center border-[1px] rounded-[18px] border-gray-400 bg-gray-400 bg-clip-padding 
-            backdrop-filter backdrop-blur-xl bg-opacity-10  gap-x-10'>
+            backdrop-filter backdrop-blur-xl bg-opacity-10  gap-x-10 p-6 gap-y-16 lg:gap-y-0'>
                 {
                     Homedata.map((item,idx) => {
                         return (
                             <div className='flex flex-col items-start justify-center text-white w-[232px] h-full gap-2
-                             hover:bg-green-400 hover:scale-125 hover:p-4 hover:rounded-2xl transition-all hover:w-[280px] ease-in-out  z-20' key={idx}>
+                             hover:bg-green-400 hover:scale-125 hover:p-4 hover:rounded-2xl 
+                             transition-all hover:w-[250px] ease-in-out z-20 ' key={idx}>
                                 <div className='relative'>
                                     <p className='font-bold text-[36px] leading-[46px]'>{`$${item.amount}`}</p>
                                     <div className='absolute bottom-3 top-5 left-[5rem]'>
@@ -150,7 +149,6 @@ const Home = () => {
                                 </div>
                             <div>
                             <Button color='success' size='large'
-
                             variant='contained'sx={{borderRadius:"32px",width:"207px",height:"45px",color:"#3FA268",opacity:0.5}}>
                             <p className='font-bold text-white hover:text-[#3FA268]'>
                                 Contact Us
@@ -166,24 +164,24 @@ const Home = () => {
             </div>
         </section>
         {/* section2 */}
-        <section className='mt-10'>
-            <div className='w-[937px] h-[189px] rounded-[18px] border-[1px] 
+        <section className='mt-10 absolute lg:top-[1070px] top-[1900px]'>
+            <div className='lg:w-[937px] lg:h-[189px] rounded-[18px] border-[1px] 
              border-gray-400 bg-gray-400 bg-clip-padding 
-             backdrop-filter backdrop-blur-xl bg-opacity-10  gap-x-10
-            px-[44px] py-[70px]  flex items-center justify-center flex-row'>
-                <div className='flex flex-col items-start justify-center  w-[559px] h-[101px]'>
+             backdrop-filter backdrop-blur-xl bg-opacity-10  lg:gap-x-10
+            lg:p-[44px 70px 44px 70px] p-[22px, 25px, 22px, 25px] px-[25px] py-[25px] flex items-center justify-center lg:flex-row flex-col'>
+                <div className='flex flex-col items-start justify-center  lg:w-[559px] w-[292px] lg:h-[101px] h-[73px]'>
                    <div>
-                   <p className='text-[#FEFEFE] font-[600] text-[35px] leading-[52.5px]'>
+                   <p className='text-[#FEFEFE] font-[600] lg:text-[35px]  text-[26px] leading-[39px] lg:leading-[52.5px]'>
                         Custom Plan
                     </p>
                    </div>
                    <div>
-                        <p className='text-left text-[20px] leading-[24px] text-[#BBBBBB]'>
+                        <p className='text-left lg:text-[20px] text-[14px]  lg:leading-[24px] leading-[16px] text-[#BBBBBB]'>
                     Contact us today to create a custom plan that meets your specific needs.
                     </p>
                    </div>
                 </div>
-                <div>
+                <div className='mt-6'>
                     <Button color='success' size='large' variant='contained' sx={{borderRadius:"32px",width:"191px",height:"59px",color:"#3FA268"}}>
                        <p className='font-bold text-white'>
                         Contact Us
@@ -197,14 +195,14 @@ const Home = () => {
         </section>
 
         {/* section3 */}
-        <section className='p-14'>
-            <div className='flex items-center justify-center flex-col w-[1131px] h-[109.94px] p-[5.14px, 15px, 0.01px,15px]'>
+        <section className='p-14 absolute lg:top-[1343px] top-[2200px]'>
+            <div className='flex items-center justify-center flex-col lg:w-[1131px] lg:h-[109.94px] p-[5.14px, 15px, 0.01px,15px]'>
                 <div className='w-[103px] h-[15px] '>
                     <p className='text-[14px] leading-[15px] text-[#F2F2F2] space-[0.4px] font-[400]'>
                         OUR PARTNERS
                     </p>
                 </div>
-                <div className='w-[1029px] h-[86px] p-[32px, 20.02px, 0px, 20px] flex flex-row items-center justify-center mt-10 gap-[55px] mx-auto'>
+                <div className='lg:w-[1029px] w-[909px] h-[74px] lg:h-[86px] lg:p-[32px, 20.02px, 0px, 20px] flex lg:flex-row  items-center justify-center mt-10 gap-[55px] mx-auto'>
                     {
                         imglinks.map((img,idx)=>{
                             return (
@@ -226,27 +224,29 @@ const Home = () => {
             </div>
         </section>
         {/* section4 */}
-        <section>
-            <div className='w-11/12 flex flex-row items-center justify-center mx-auto'>
+        <section className='absolute lg:top-[1548px] top-[2442px]'>
+            <div className='w-11/12 flex lg:flex-row flex-col items-center justify-center mx-auto'>
                 <div className='flex flex-col items-start justify-center mx-auto'>
                     <div>
                        <p className='text-[#3FA268] font-normal text-[14px] leading-[17.33px]'>TESTIMONIALS</p> 
                     </div>
                     <div className='w-[344px] h-[96px] text-[#FEFEFE] mt-11'>
-                        <p className='text-[40px] leading-[48px] font-normal'>
+                        <p className='lg:text-[40px] text-[28px] lg:leading-[48px] leading-[34px] font-normal'>
                         Check what our clients are saying
                         </p>
                     </div>
 
                 </div>
-                <div className='flex flex-col items-start justify-center gap-7'>
+                <div className='flex flex-col items-start justify-center lg:gap-7 gap-5 mx-auto'>
                     <div className='w-[31px] h-[27px]'>
-                        <FormatQuoteIcon color='success'sx={{rotate:"180deg",fontSize:"50px"}} className='w-full h-full'></FormatQuoteIcon>
+                        <FormatQuoteIcon color='success'sx={{rotate:"180deg",fontSize:"50px"}} 
+                        className='w-full h-full'></FormatQuoteIcon>
                     </div>
-                    <div className='w-[799px] h-[123px]'>
-                        <p className='text-[25px] leading-[41px] text-[#FEFEFE]'>
+                    <div className='lg:w-[799px] w-[357px] lg:h-[123px] h-[105px]'>
+                        <p className='lg:text-[25px] text-[16px] lg:leading-[41px] leading-[21px] text-[#FEFEFE]'>
                             Since using this platform, our research has completely transformed. 
-                            we would highly recommend this platform to any business looking to simplify their research process and drive more innovation.</p>
+                            we would highly recommend this platform to any business looking to 
+                            simplify their research process and drive more innovation.</p>
                     </div>
                     <div className='text-[#FEFEFE]'>
                     <p className='text-[20px] leading-[30px]'>Adrian Cal</p>
@@ -254,12 +254,6 @@ const Home = () => {
                         CEO GetNextDesignz
                         </p>
                     </div>
-                    {/* <div>
-                        <p>
-                        CEO GetNextDesignz
-                        </p>
-
-                    </div> */}
                 </div>
 
             </div>
