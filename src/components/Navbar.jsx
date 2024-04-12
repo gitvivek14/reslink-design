@@ -26,7 +26,7 @@ const Navbar = () => {
 
                     </div>
                 </div>
-                <nav className='lg:visible hidden'>
+                <nav className='lg:flex hidden'>
                     <ul className=' text-[#FEFEFE] flex gap-x-6 flex-row items-center justify-center mx-auto'>
                         {
                             Navlinks.map((link, idx) => (
