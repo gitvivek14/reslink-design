@@ -6,9 +6,13 @@ import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { Homedata } from '../Data/HomeData';
 import { imglinks } from '../Data/ImageLinks';
+import { Homedata1 } from '../Data/HomeData';
+import { useMediaQuery } from 'react-responsive';
 
 const Home = () => {
        const [checkk, setcheckk] = useState(false)
+       const isMobile = useMediaQuery({ maxWidth: 500 });
+       const isDesktop = useMediaQuery({ minWidth: 1400 });
     const CustomSwitch = styled((props) => (
         <Switch focusVisibleClassName=".Mui-focusVisible"
          disableRipple {...props} checked={checkk} onChange={()=>setcheckk(!checkk)} />
@@ -88,17 +92,25 @@ const Home = () => {
                 <div className='w-full flex items-center mt-[33px] 
                 justify-center mx-auto rounded-[20px] gap-5 transition-all ease-in'>
                      <div className={`${!checkk? "text-white font-bold" : "text-white"} transition-all ease-in text-[#FEFEFE] text-[18px] 
-                    leading-[30px]`}>
+                    leading-[30px] lg:visible hidden`}>
                         Billed Monthly
+                    </div>
+                    <div className={`${!checkk? "text-white font-bold" : "text-white"} transition-all ease-in text-[#FEFEFE] text-[18px] 
+                    leading-[30px] lg:hidden`}>
+                      Monthly
                     </div>
                     <div>
                         <CustomSwitch></CustomSwitch>
                     </div>
                     <div className={`${checkk? "text-white font-bold" : "text-white"} transition-all ease-in text-[#FEFEFE] text-[18px] 
                     leading-[30px]`}>
-                        <div>
+                        <div className='lg:visible hidden'>
                             Billed Anually
                             <span className='text-green-500'>(Save 20%)</span>
+                        </div>
+                        <div className='lg:hidden'>
+                            Anually
+                            <div className='text-green-500'>(Save 20%)</div>
                         </div>
                     </div>
 
@@ -112,7 +124,56 @@ const Home = () => {
             justify-center border-[1px] rounded-[18px] border-gray-400 bg-gray-400 bg-clip-padding 
             backdrop-filter backdrop-blur-xl bg-opacity-10  gap-x-10 p-6 gap-y-16 lg:gap-y-0'>
                 {
-                    Homedata.map((item,idx) => {
+                    checkk && Homedata.map((item,idx) => {
+                        return (
+                            <div className='flex flex-col items-start justify-center text-white w-[232px] h-full gap-2
+                             hover:bg-green-400 hover:scale-125 hover:p-4 hover:rounded-2xl 
+                             transition-all hover:w-[250px] ease-in-out z-20 ' key={idx}>
+                                <div className='relative'>
+                                    <p className='font-bold text-[36px] leading-[46px]'>{`$${item.amount}`}</p>
+                                    <div className='absolute bottom-3 top-5 left-[5rem]'>
+                                    <p>/month</p>
+                                </div>
+                                </div>
+                                
+                                <div>
+                                    <p className='font-medium text-[28px] leading-[42px]'>{item.title}</p>
+                                </div>
+                              <div className='flex items-start justify-center flex-col'>
+                                <ul className='flex flex-col items-start justify-center gap-4'>
+                                    {
+                                        item.points.map((point,idx)=>(
+                                            <li key={idx}>
+                                                <div className='flex items-center justify-center gap-x-3'>
+                                                    <div>
+                                                        <CheckCircleIcon color='success'></CheckCircleIcon>
+                                                    </div>
+                                                    <div>
+                                                        <p>
+                                                            {point.p}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        ))
+                                    }
+                                </ul>
+                                </div>
+                            <div>
+                            <Button color='success' size='large'
+                            variant='contained'sx={{borderRadius:"32px",width:"207px",height:"45px",color:"#3FA268",opacity:0.5}}>
+                            <p className='font-bold text-white hover:text-[#3FA268]'>
+                                Contact Us
+                                </p>
+                            </Button>
+                            </div>
+                            </div>
+                        )
+                    })
+                    
+                }
+                {
+                    !checkk && Homedata1.map((item,idx) => {
                         return (
                             <div className='flex flex-col items-start justify-center text-white w-[232px] h-full gap-2
                              hover:bg-green-400 hover:scale-125 hover:p-4 hover:rounded-2xl 
